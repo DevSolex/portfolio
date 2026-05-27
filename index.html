@@ -1,338 +1,436 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Solex | Creative Full Stack Developer</title>
-    <link rel="stylesheet" href="/src/output.css">
-    <style>
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-gradient {
-            background-size: 200% 200%;
-            animation: gradientMove 6s ease infinite;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samaila Solomon | Backend & Full-Stack Engineer</title>
+  <link rel="stylesheet" href="/src/output.css">
+  <style>
+    @keyframes gradientMove {
+      0%,100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
+    }
+    .animate-gradient { background-size: 200% 200%; animation: gradientMove 6s ease infinite; }
+    #hero-canvas { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+    #typed-role::after { content:'|'; animation: blink .7s step-end infinite; }
+    @keyframes blink { 50% { opacity:0; } }
+    .skill-category-title { font-size:.65rem; letter-spacing:.12em; text-transform:uppercase; }
+  </style>
 </head>
-
 <body class="bg-black text-white font-sans overflow-x-hidden">
 
-    <!-- NAV -->
-    <header class="fixed w-full z-50 bg-black/70 backdrop-blur-xl border-b border-zinc-800">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <h1 class="text-lg font-bold tracking-widest">
-                DEV <span class="text-cyan-400">SOLEX</span>
-            </h1>
+<!-- NAV -->
+<header class="fixed w-full z-50 bg-black/80 backdrop-blur-xl border-b border-zinc-800">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <span class="text-base font-bold tracking-widest">DEV <span class="text-cyan-400">SOLEX</span></span>
+    <nav class="hidden md:flex gap-8 text-sm text-zinc-400">
+      <a href="#about"      class="hover:text-white transition">About</a>
+      <a href="#experience" class="hover:text-white transition">Experience</a>
+      <a href="#projects"   class="hover:text-white transition">Projects</a>
+      <a href="#skills"     class="hover:text-white transition">Skills</a>
+      <a href="#contact"    class="hover:text-white transition">Contact</a>
+    </nav>
+    <a href="mailto:ngutial18@gmail.com"
+      class="hidden md:block px-5 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-sm font-semibold hover:scale-105 transition">
+      Hire Me
+    </a>
+  </div>
+</header>
 
-            <nav class="hidden md:flex gap-10 text-sm text-zinc-400">
-                <a href="#work" class="hover:text-white transition">Work</a>
-                <a href="#about" class="hover:text-white transition">About</a>
-                <a href="#contact" class="hover:text-white transition">Contact</a>
-            </nav>
+<!-- HERO -->
+<section id="hero" class="min-h-screen flex items-center pt-28 relative overflow-hidden">
+  <canvas id="hero-canvas"></canvas>
+  <div class="absolute top-0 left-0 w-96 h-96 bg-purple-600 opacity-20 blur-3xl rounded-full pointer-events-none"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500 opacity-20 blur-3xl rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
+    <div id="hero-text">
+      <p class="text-cyan-400 text-xs font-semibold tracking-widest uppercase mb-4">Available for work · Jos, Nigeria</p>
+
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
+        Ngutial<br>
+        <span class="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
+          Solomon
+        </span>
+      </h1>
+
+      <p class="mt-4 text-lg text-zinc-300 font-medium">
+        <span id="typed-role" class="text-white font-semibold"></span>
+      </p>
+
+      <p class="mt-5 text-zinc-400 text-base max-w-lg leading-relaxed">
+        Backend &amp; Full-Stack Engineer building scalable, secure, API-driven systems
+        with JavaScript, TypeScript, Python, FastAPI, Node.js, PostgreSQL, and Docker.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#projects"
+          class="px-7 py-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold hover:scale-105 transition duration-300">
+          View Projects
+        </a>
+        <a href="#contact"
+          class="px-7 py-3 rounded-2xl border border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 transition">
+          Let's Connect
+        </a>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="mt-10 flex gap-8 text-center">
+        <div>
+          <p class="text-2xl font-bold text-white">3+</p>
+          <p class="text-xs text-zinc-500 mt-1">Projects Shipped</p>
         </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="min-h-screen flex items-center pt-32 relative">
-
-        <!-- Glow Background -->
-        <div class="absolute top-0 left-0 w-96 h-96 bg-purple-600 opacity-20 blur-3xl rounded-full"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500 opacity-20 blur-3xl rounded-full"></div>
-
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center relative z-10">
-
-            <!-- TEXT -->
-            <div>
-                <h2 class="text-6xl md:text-7xl font-extrabold leading-tight">
-                    I Craft
-                    <span
-                        class="block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
-                        Digital Experiences
-                    </span>
-                </h2>
-
-                <p class="mt-8 text-zinc-400 text-lg max-w-lg leading-relaxed">
-                    Full Stack Developer building scalable systems with clean UI,
-                    strong backend architecture, and production-ready performance.
-                </p>
-
-                <div class="mt-10 flex flex-wrap gap-6">
-                    <a href="#work"
-                        class="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold hover:scale-110 transition duration-300">
-                        Explore Work
-                    </a>
-
-                    <a href="#contact"
-                        class="px-8 py-4 rounded-2xl border border-zinc-700 hover:border-white transition">
-                        Let’s Connect
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- IMAGE -->
-            <div class="relative flex justify-center animate-float">
-                <div
-                    class="absolute w-96 h-96 bg-gradient-to-r from-cyan-500 to-purple-600 blur-3xl opacity-30 rounded-3xl rotate-12">
-                </div>
-
-                <img src="assets/solex.jpeg" alt="Dev Solex"
-                    class="relative w-80 h-[30rem] object-cover rounded-3xl shadow-2xl border border-zinc-800">
-            </div>
-
+        <div class="border-l border-zinc-800 pl-8">
+          <p class="text-2xl font-bold text-white">1+</p>
+          <p class="text-xs text-zinc-500 mt-1">Years Experience</p>
         </div>
-    </section>
-
-    <!-- WORK -->
-    <section id="work" class="py-32 bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <h3 class="text-4xl font-bold mb-20">Featured Projects</h3>
-
-            <div class="grid md:grid-cols-2 gap-16">
-                <a href="https://dashboard-task-ten-roan.vercel.app">
-                <div
-                    class="group p-10 rounded-3xl bg-zinc-900 border border-zinc-800 hover:scale-105 hover:border-cyan-400 transition duration-300">
-                    <h4 class="text-2xl font-semibold mb-6 group-hover:text-cyan-400 transition">
-                        Hostel Management System
-                    </h4>
-                    <p class="text-zinc-400 mb-6">
-                        Full-stack administrative dashboard with analytics,
-                        allocation system, and financial management.
-                    </p>
-                </div>
-                </a>
-
-                <div
-                    class="group p-10 rounded-3xl bg-zinc-900 border border-zinc-800 hover:scale-105 hover:border-purple-400 transition duration-300">
-                    <h4 class="text-2xl font-semibold mb-6 group-hover:text-purple-400 transition">
-                        E-Commerce Backend API
-                    </h4>
-                    <p class="text-zinc-400 mb-6">
-                        Secure REST API with authentication,
-                        payment integration, and scalable database design.
-                    </p>
-                </div>
-
-            </div>
+        <div class="border-l border-zinc-800 pl-8">
+          <p class="text-2xl font-bold text-white">10+</p>
+          <p class="text-xs text-zinc-500 mt-1">Technologies</p>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <section id="about" class="py-24 bg-gradient-to-b from-gray-950 to-black text-gray-300">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <!-- Photo -->
+    <div class="relative flex justify-center">
+      <div class="absolute w-80 h-80 bg-gradient-to-r from-cyan-500 to-purple-600 blur-3xl opacity-25 rounded-3xl rotate-12"></div>
+      <img src="/Dev Solex.jpeg" alt="Samaila Solomon"
+        class="relative w-72 h-[28rem] object-cover rounded-3xl shadow-2xl border border-zinc-800">
+    </div>
+  </div>
+</section>
 
-            <!-- Left Side -->
-            <div>
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-                    About <span class="text-indigo-500">Me</span>
-                </h2>
+<!-- ABOUT -->
+<section id="about" class="py-24 bg-zinc-950">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <p class="text-cyan-400 text-xs font-semibold tracking-widest uppercase mb-3">Who I Am</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">About <span class="text-cyan-400">Me</span></h2>
+      <p class="text-zinc-400 text-lg leading-relaxed mb-5">
+        I'm <span class="text-white font-semibold">Samaila Solomon Monday</span> — a Backend &amp; Full-Stack
+        Software Engineer and DevOps Engineer based in Jos, Plateau State, Nigeria.
+      </p>
+      <p class="text-zinc-400 text-lg leading-relaxed mb-5">
+        I specialise in building scalable, secure, API-driven systems. From designing PostgreSQL schemas
+        to shipping production REST APIs with JWT auth and RBAC, I focus on clean architecture and
+        backend reliability.
+      </p>
+      <p class="text-zinc-400 text-lg leading-relaxed">
+        Currently a Backend Engineer at <span class="text-white font-semibold">TrueMinds Innovation</span>,
+        studying Computer Science at Plateau State University, and a graduate of the
+        Blockfuse Labs Software Engineering Program.
+      </p>
+    </div>
 
-                <p class="text-lg leading-relaxed mb-6">
-                    I’m <span class="text-white font-semibold">Dev Solex</span>, a full-stack developer focused on
-                    building
-                    scalable web applications with clean architecture and sharp UI precision.
-                </p>
-
-                <p class="text-lg leading-relaxed mb-6">
-                    I don’t just write code — I engineer digital experiences. From backend APIs to
-                    polished frontend interfaces, I bridge logic and design to create products
-                    that are fast, reliable, and visually intentional.
-                </p>
-
-                <p class="text-lg leading-relaxed">
-                    Currently building and experimenting with modern stacks, improving system
-                    performance, and crafting tools that solve real problems.
-                </p>
-
-                <!-- Tech Tags -->
-                <div class="flex flex-wrap gap-3 mt-8">
-                    <span class="px-4 py-2 bg-gray-800 rounded-full text-sm">Python</span>
-                    <span class="px-4 py-2 bg-gray-800 rounded-full text-sm">Docker</span>
-                    <span class="px-4 py-2 bg-gray-800 rounded-full text-sm">Tailwind</span>
-                    <span class="px-4 py-2 bg-gray-800 rounded-full text-sm">FastAPI</span>
-                    <span class="px-4 py-2 bg-gray-800 rounded-full text-sm">PostgreSQL</span>
-                </div>
-            </div>
-
-            <!-- Right Side -->
-            <div class="relative">
-                <div
-                    class="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur opacity-30">
-                </div>
-                <div class="relative bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-xl">
-                    <h3 class="text-2xl font-semibold text-white mb-4">What Drives Me</h3>
-
-                    <ul class="space-y-4 text-gray-400">
-                        <li>⚡ Writing clean, scalable backend systems</li>
-                        <li>🎨 Designing dark-mode UI with precision</li>
-                        <li>🚀 Shipping products fast and iterating smarter</li>
-                        <li>🧠 Constantly learning and improving</li>
-                    </ul>
-                </div>
-            </div>
-
+    <div id="about-card" class="relative">
+      <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl blur opacity-20"></div>
+      <div class="relative bg-zinc-900 border border-zinc-800 rounded-2xl p-8 space-y-5">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🎓</span>
+          <div>
+            <p class="text-white font-semibold text-sm">Plateau State University</p>
+            <p class="text-zinc-500 text-xs">B.Sc. Computer Science · 2026–Present</p>
+          </div>
         </div>
-    </section>
-    <!-- CONTACT -->
-    <section id="contact" class="py-28 bg-black text-gray-300 relative overflow-hidden">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🏢</span>
+          <div>
+            <p class="text-white font-semibold text-sm">TrueMinds Innovation</p>
+            <p class="text-zinc-500 text-xs">Backend Engineer · Feb 2026–Present</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">⚡</span>
+          <div>
+            <p class="text-white font-semibold text-sm">Blockfuse Labs</p>
+            <p class="text-zinc-500 text-xs">Software Engineering Program · 2025</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">📍</span>
+          <div>
+            <p class="text-white font-semibold text-sm">Jos, Plateau State, Nigeria</p>
+            <p class="text-zinc-500 text-xs">ngutial18@gmail.com · 07086303302</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Background Glow -->
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-600/10 blur-[150px] rounded-full">
+<!-- EXPERIENCE -->
+<section id="experience" class="py-24 bg-black">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="text-cyan-400 text-xs font-semibold tracking-widest uppercase mb-3">Where I've Worked</p>
+    <h2 class="text-4xl font-bold text-white mb-16">Experience</h2>
+
+    <!-- TrueMinds -->
+    <div class="exp-item relative pl-8 pb-14 border-l border-zinc-800">
+      <div class="absolute -left-2 top-1 w-4 h-4 rounded-full bg-cyan-400 shadow-lg shadow-cyan-400/40"></div>
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <div>
+          <h3 class="text-xl font-bold text-white">Backend Engineer</h3>
+          <p class="text-cyan-400 font-medium">TrueMinds Innovation</p>
+        </div>
+        <span class="text-xs text-zinc-500 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-full">Feb 2026 – Present</span>
+      </div>
+      <ul class="space-y-2 text-zinc-400 text-sm">
+        <li class="flex gap-2"><span class="text-cyan-400 mt-0.5">▸</span>Built and maintained backend APIs for internal systems including Kitchen API and Library API</li>
+        <li class="flex gap-2"><span class="text-cyan-400 mt-0.5">▸</span>Designed and implemented RESTful APIs for system workflows</li>
+        <li class="flex gap-2"><span class="text-cyan-400 mt-0.5">▸</span>Worked with Docker for consistent development environments</li>
+        <li class="flex gap-2"><span class="text-cyan-400 mt-0.5">▸</span>Designed database schemas and backend data models</li>
+        <li class="flex gap-2"><span class="text-cyan-400 mt-0.5">▸</span>Implemented authentication systems and secured API endpoints</li>
+        <li class="flex gap-2"><span class="text-cyan-400 mt-0.5">▸</span>Debugged and improved backend system reliability</li>
+      </ul>
+    </div>
+
+    <!-- Blockfuse -->
+    <div class="exp-item relative pl-8 border-l border-zinc-800">
+      <div class="absolute -left-2 top-1 w-4 h-4 rounded-full bg-purple-400 shadow-lg shadow-purple-400/40"></div>
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <div>
+          <h3 class="text-xl font-bold text-white">Software Engineering Trainee</h3>
+          <p class="text-purple-400 font-medium">Blockfuse Labs</p>
+        </div>
+        <span class="text-xs text-zinc-500 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-full">2025</span>
+      </div>
+      <ul class="space-y-2 text-zinc-400 text-sm">
+        <li class="flex gap-2"><span class="text-purple-400 mt-0.5">▸</span>Completed intensive Software Engineering Program covering backend engineering and system design</li>
+        <li class="flex gap-2"><span class="text-purple-400 mt-0.5">▸</span>Trained in Backend Engineering &amp; System Design at TrueMinds Innovation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24 bg-zinc-950">
+  <div class="max-w-7xl mx-auto px-6">
+    <p class="text-cyan-400 text-xs font-semibold tracking-widest uppercase mb-3">What I've Built</p>
+    <h2 class="text-4xl font-bold text-white mb-16">Projects</h2>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+      <!-- Vintique -->
+      <a href="https://vintique-one.vercel.app/" target="_blank" rel="noopener"
+        class="project-card group flex flex-col p-8 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-cyan-400 hover:-translate-y-1 transition duration-300">
+        <div class="flex items-center justify-between mb-5">
+          <span class="text-3xl">🛒</span>
+          <span class="text-xs text-zinc-500 bg-zinc-800 px-3 py-1 rounded-full">2026</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">Vintique</h3>
+        <p class="text-zinc-500 text-xs font-semibold uppercase tracking-wider mb-3">Full-Stack E-Commerce Platform</p>
+        <p class="text-zinc-400 text-sm leading-relaxed flex-1">
+          Built backend APIs, designed PostgreSQL architecture, implemented auth &amp; authorization,
+          order/cart logic, Cloudinary media integration, and Docker-based dev setup.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="text-xs bg-cyan-500/10 text-cyan-400 px-2 py-1 rounded">PostgreSQL</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-400 px-2 py-1 rounded">Docker</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-400 px-2 py-1 rounded">Cloudinary</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-400 px-2 py-1 rounded">JWT</span>
+        </div>
+        <p class="mt-5 text-cyan-400 text-sm font-medium group-hover:underline">View Live →</p>
+      </a>
+
+      <!-- TodoFlow -->
+      <a href="https://todo-flow-chi-swart.vercel.app/" target="_blank" rel="noopener"
+        class="project-card group flex flex-col p-8 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-purple-400 hover:-translate-y-1 transition duration-300">
+        <div class="flex items-center justify-between mb-5">
+          <span class="text-3xl">✅</span>
+          <span class="text-xs text-zinc-500 bg-zinc-800 px-3 py-1 rounded-full">2026</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition">TodoFlow</h3>
+        <p class="text-zinc-500 text-xs font-semibold uppercase tracking-wider mb-3">Task Management System</p>
+        <p class="text-zinc-400 text-sm leading-relaxed flex-1">
+          Full-stack task management system with secure REST APIs, JWT authentication,
+          protected routes, frontend-backend integration, and scalable backend architecture.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-1 rounded">REST API</span>
+          <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-1 rounded">JWT</span>
+          <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-1 rounded">Full-Stack</span>
+        </div>
+        <p class="mt-5 text-purple-400 text-sm font-medium group-hover:underline">View Live →</p>
+      </a>
+
+      <!-- Attendance -->
+      <div class="project-card group flex flex-col p-8 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-pink-400 hover:-translate-y-1 transition duration-300">
+        <div class="flex items-center justify-between mb-5">
+          <span class="text-3xl">📋</span>
+          <span class="text-xs text-zinc-500 bg-zinc-800 px-3 py-1 rounded-full">2026</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition">Attendance Tracker</h3>
+        <p class="text-zinc-500 text-xs font-semibold uppercase tracking-wider mb-3">Backend API System</p>
+        <p class="text-zinc-400 text-sm leading-relaxed flex-1">
+          Secure attendance tracking API with JWT authentication, role-based access control (RBAC),
+          and scalable backend architecture for attendance workflows.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="text-xs bg-pink-500/10 text-pink-400 px-2 py-1 rounded">RBAC</span>
+          <span class="text-xs bg-pink-500/10 text-pink-400 px-2 py-1 rounded">JWT</span>
+          <span class="text-xs bg-pink-500/10 text-pink-400 px-2 py-1 rounded">FastAPI</span>
+        </div>
+        <p class="mt-5 text-zinc-600 text-sm">Private repo</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-24 bg-black">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-cyan-400 text-xs font-semibold tracking-widest uppercase mb-3">My Toolkit</p>
+    <h2 class="text-4xl font-bold text-white mb-16">Technical Skills</h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="skills-group p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <p class="skill-category-title text-cyan-400 mb-4">Languages</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-cyan-500/20 hover:text-cyan-300 transition cursor-default">JavaScript</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-cyan-500/20 hover:text-cyan-300 transition cursor-default">TypeScript</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-cyan-500/20 hover:text-cyan-300 transition cursor-default">Python</span>
+        </div>
+      </div>
+
+      <div class="skills-group p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <p class="skill-category-title text-purple-400 mb-4">Backend</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-purple-500/20 hover:text-purple-300 transition cursor-default">FastAPI</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-purple-500/20 hover:text-purple-300 transition cursor-default">Node.js</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-purple-500/20 hover:text-purple-300 transition cursor-default">REST APIs</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-purple-500/20 hover:text-purple-300 transition cursor-default">JWT Auth</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-purple-500/20 hover:text-purple-300 transition cursor-default">RBAC</span>
+        </div>
+      </div>
+
+      <div class="skills-group p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <p class="skill-category-title text-pink-400 mb-4">Database</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-pink-500/20 hover:text-pink-300 transition cursor-default">PostgreSQL</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-pink-500/20 hover:text-pink-300 transition cursor-default">MySQL</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-pink-500/20 hover:text-pink-300 transition cursor-default">SQLAlchemy</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-pink-500/20 hover:text-pink-300 transition cursor-default">DB Design</span>
+        </div>
+      </div>
+
+      <div class="skills-group p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <p class="skill-category-title text-green-400 mb-4">DevOps & Tools</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-green-500/20 hover:text-green-300 transition cursor-default">Docker</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-green-500/20 hover:text-green-300 transition cursor-default">Git</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-green-500/20 hover:text-green-300 transition cursor-default">Containerization</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-green-500/20 hover:text-green-300 transition cursor-default">Version Control</span>
+        </div>
+      </div>
+
+      <div class="skills-group p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <p class="skill-category-title text-yellow-400 mb-4">Frontend</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-yellow-500/20 hover:text-yellow-300 transition cursor-default">React</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-yellow-500/20 hover:text-yellow-300 transition cursor-default">HTML</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-yellow-500/20 hover:text-yellow-300 transition cursor-default">CSS</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-yellow-500/20 hover:text-yellow-300 transition cursor-default">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <div class="skills-group p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <p class="skill-category-title text-orange-400 mb-4">Core Engineering</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-orange-500/20 hover:text-orange-300 transition cursor-default">System Design</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-orange-500/20 hover:text-orange-300 transition cursor-default">Payment Integration</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-orange-500/20 hover:text-orange-300 transition cursor-default">Cloudinary</span>
+          <span class="skill-tag px-3 py-1.5 bg-zinc-800 rounded-lg text-sm hover:bg-orange-500/20 hover:text-orange-300 transition cursor-default">Debugging</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 bg-zinc-950 relative overflow-hidden">
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-5xl mx-auto px-6 relative z-10">
+    <p class="text-cyan-400 text-xs font-semibold tracking-widest uppercase mb-3 text-center">Get In Touch</p>
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
+      Let's Build Something <span class="text-cyan-400">Exceptional</span>
+    </h2>
+    <p class="text-zinc-400 text-center max-w-xl mx-auto mb-14">
+      Open to backend roles, full-stack projects, and DevOps opportunities.
+      Let's talk.
+    </p>
+
+    <div id="contact-card" class="bg-black border border-zinc-800 rounded-2xl p-10 shadow-2xl">
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <div class="space-y-8">
+          <div>
+            <p class="text-xs text-zinc-500 uppercase tracking-widest mb-1">Email</p>
+            <a href="mailto:ngutial18@gmail.com" class="text-white hover:text-cyan-400 transition font-medium">ngutial18@gmail.com</a>
+          </div>
+          <div>
+            <p class="text-xs text-zinc-500 uppercase tracking-widest mb-1">Phone</p>
+            <a href="tel:07086303302" class="text-white hover:text-cyan-400 transition font-medium">07086303302</a>
+          </div>
+          <div>
+            <p class="text-xs text-zinc-500 uppercase tracking-widest mb-1">Location</p>
+            <p class="text-white font-medium">Jos, Plateau State, Nigeria</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-zinc-500 uppercase tracking-widest mb-4">Socials</p>
+            <div class="flex gap-3">
+
+              <a href="https://github.com/DevSolex" target="_blank" rel="noopener"
+                class="group w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:border-white hover:-translate-y-1 transition">
+                <svg class="w-5 h-5 text-zinc-400 group-hover:text-white transition" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.55v-2.15c-3.2.7-3.88-1.38-3.88-1.38-.52-1.3-1.28-1.64-1.28-1.64-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.69 0-1.26.45-2.28 1.2-3.08-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18A11.06 11.06 0 0112 6.84c.98.01 1.97.13 2.9.39 2.2-1.5 3.17-1.18 3.17-1.18.64 1.6.24 2.77.12 3.06.75.8 1.2 1.82 1.2 3.08 0 4.42-2.7 5.4-5.28 5.68.41.35.77 1.05.77 2.12v3.14c0 .3.21.65.8.54A10.51 10.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/>
+                </svg>
+              </a>
+
+              <a href="https://x.com/DevSolex" target="_blank" rel="noopener"
+                class="group w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:border-blue-400 hover:-translate-y-1 transition">
+                <svg class="w-5 h-5 text-zinc-400 group-hover:text-blue-400 transition" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012.15 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                </svg>
+              </a>
+
+              <a href="https://www.linkedin.com/in/samaila-solomon-monday/" target="_blank" rel="noopener"
+                class="group w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:border-blue-500 hover:-translate-y-1 transition">
+                <svg class="w-5 h-5 text-zinc-400 group-hover:text-blue-500 transition" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.05-1.86-3.05-1.87 0-2.16 1.46-2.16 2.96v5.66H9.32V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.34-1.85 3.57 0 4.23 2.35 4.23 5.4v6.34zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM6.92 20.45H3.75V9h3.17v11.45z"/>
+                </svg>
+              </a>
+
+            </div>
+          </div>
         </div>
 
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
+        <form class="space-y-4">
+          <input type="text" placeholder="Your Name"
+            class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-500 transition">
+          <input type="email" placeholder="Your Email"
+            class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-500 transition">
+          <textarea rows="4" placeholder="Your Message"
+            class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-500 transition"></textarea>
+          <a href="mailto:ngutial18@gmail.com"
+            class="w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 transition py-3 rounded-xl text-white font-semibold block text-center">
+            Send Message →
+          </a>
+        </form>
 
-            <!-- Header -->
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                    Let’s Build Something <span class="text-indigo-500">Exceptional</span>
-                </h2>
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-                    Have a project idea, collaboration, or opportunity?
-                    I’m always open to meaningful conversations and ambitious ideas.
-                </p>
-            </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Contact Card -->
-            <div class="bg-gray-950 border border-gray-800 rounded-2xl p-10 shadow-2xl backdrop-blur-xl">
+<footer class="py-8 text-center text-zinc-600 border-t border-zinc-900 text-sm">
+  © 2026 Samaila Solomon Monday — Backend &amp; Full-Stack Engineer
+</footer>
 
-                <div class="grid md:grid-cols-2 gap-10">
-
-                    <!-- Left -->
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-2">Email</h3>
-                            <p class="text-gray-400">devsolex6@email.com</p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-2">Location</h3>
-                            <p class="text-gray-400">Jos, Nigeria</p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-6">Connect With Me</h3>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-
-                                <!-- GitHub -->
-                                <a href="https://github.com/DevSolex"
-                                    class="group relative bg-gray-900 border border-gray-800 rounded-xl p-6 flex flex-col items-center justify-center hover:-translate-y-2 transition duration-300 overflow-hidden">
-
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-br from-gray-700/20 to-gray-900/20 opacity-0 group-hover:opacity-100 transition">
-                                    </div>
-
-                                    <svg class="w-8 h-8 text-gray-400 group-hover:text-white transition"
-                                        fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.55v-2.15c-3.2.7-3.88-1.38-3.88-1.38-.52-1.3-1.28-1.64-1.28-1.64-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.69 0-1.26.45-2.28 1.2-3.08-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18A11.06 11.06 0 0112 6.84c.98.01 1.97.13 2.9.39 2.2-1.5 3.17-1.18 3.17-1.18.64 1.6.24 2.77.12 3.06.75.8 1.2 1.82 1.2 3.08 0 4.42-2.7 5.4-5.28 5.68.41.35.77 1.05.77 2.12v3.14c0 .3.21.65.8.54A10.51 10.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z" />
-                                    </svg>
-
-                                    <span class="mt-3 text-gray-400 group-hover:text-white transition font-medium">
-                                        GitHub
-                                    </span>
-                                </a>
-
-                                <!-- Twitter -->
-                                <a href="https://x.com/DevSolex"
-                                    class="group relative bg-gray-900 border border-gray-800 rounded-xl p-6 flex flex-col items-center justify-center hover:-translate-y-2 transition duration-300 overflow-hidden">
-
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-600/20 opacity-0 group-hover:opacity-100 transition">
-                                    </div>
-
-                                    <svg class="w-8 h-8 text-gray-400 group-hover:text-blue-400 transition"
-                                        fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012.15 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                                    </svg>
-
-                                    <span class="mt-3 text-gray-400 group-hover:text-white transition font-medium">
-                                        Twitter
-                                    </span>
-                                </a>
-
-                                <!-- LinkedIn -->
-                                <a href="#"
-                                    class="group relative bg-gray-900 border border-gray-800 rounded-xl p-6 flex flex-col items-center justify-center hover:-translate-y-2 transition duration-300 overflow-hidden">
-
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-br from-blue-700/20 to-cyan-600/20 opacity-0 group-hover:opacity-100 transition">
-                                    </div>
-
-                                    <svg class="w-8 h-8 text-gray-400 group-hover:text-blue-500 transition"
-                                        fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.05-1.86-3.05-1.87 0-2.16 1.46-2.16 2.96v5.66H9.32V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.34-1.85 3.57 0 4.23 2.35 4.23 5.4v6.34zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM6.92 20.45H3.75V9h3.17v11.45z" />
-                                    </svg>
-
-                                    <span class="mt-3 text-gray-400 group-hover:text-white transition font-medium">
-                                        LinkedIn
-                                    </span>
-                                </a>
-
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-                    <!-- Right Form -->
-                    <form class="space-y-5">
-                        <input type="text" placeholder="Your Name"
-                            class="w-full bg-black border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500">
-
-                        <input type="email" placeholder="Your Email"
-                            class="w-full bg-black border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500">
-
-                        <textarea rows="4" placeholder="Your Message"
-                            class="w-full bg-black border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500"></textarea>
-
-                        <a href="mailto:devsolex6@gmail.com"
-                            class="w-full bg-indigo-600 hover:bg-indigo-700 transition duration-300 py-3 rounded-lg text-white font-semibold shadow-lg shadow-indigo-600/30 block text-center">
-                            Send Message →
-                        </a>
-                    </form>
-
-                </div>
-            </div>
-    </section>
-
-    <footer class="py-10 text-center text-zinc-600 border-t border-zinc-800 text-sm">
-        © 2026 Dev Solex — Creative Full Stack Developer
-    </footer>
-
+<script type="module" src="/src/main.ts"></script>
 </body>
-
 </html>
