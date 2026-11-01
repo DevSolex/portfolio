@@ -3,7 +3,7 @@ import "./globals.css";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 
-const siteUrl = "https://portfolio-beta-nine-77.vercel.app";
+const siteUrl = "https://solex-dev.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
