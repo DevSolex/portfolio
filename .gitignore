@@ -43,3 +43,6 @@ next-env.d.ts
 node_modules
 .next
 out
+
+# interview preparation notes — not for public deploy
+/interview-preparation
