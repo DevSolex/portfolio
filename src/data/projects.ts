@@ -11,15 +11,16 @@ export const projects: Project[] = [
   {
     name: "ConFam",
     description:
-      "A WhatsApp-first merchant platform. Merchants can receive payments via WhatsApp, manage payment links, track sales records, and onboard customers through a conversational interface.",
+      "A WhatsApp-first payment platform for informal merchants in Nigeria and Ghana. Merchants type commands in a ConFam WhatsApp thread to generate payment links, receive funds via Paystack, and track every sale in an append-only ledger.",
     contribution:
-      "Built and own this project. Implemented merchant onboarding, payment link generation, Paystack payment processing and webhook handling, bank account resolution, sales record tracking, and the WhatsApp Cloud API integration.",
+      "Built and own this project end to end. Implemented the WhatsApp Cloud API message routing and command handling, Paystack webhook processing with HMAC-SHA512 signature verification, payment link creation and expiry, bank account resolution and subaccount onboarding, the append-only ledger with PostgreSQL-enforced insert-only rules, and a 48-hour cooling-off window for payout account changes.",
     technologies: [
-      "Node.js",
-      "TypeScript",
+      "Python",
+      "FastAPI",
       "PostgreSQL",
       "Paystack",
       "WhatsApp Cloud API",
+      "Docker",
     ],
     repo: "https://github.com/DevSolex/ConFam",
     live: "https://con-fam.vercel.app/",
@@ -27,30 +28,52 @@ export const projects: Project[] = [
   {
     name: "Vintique",
     description:
-      "An e-commerce application for browsing and purchasing vintage and second-hand products, with user authentication, product listings, cart management, and order processing.",
+      "An e-commerce application for vintage and second-hand clothing. Users can browse products, manage a cart, check out with Paystack, and track orders. Admins manage inventory and user accounts.",
     contribution:
-      "Worked on the backend: API endpoints for products, cart, and orders; database models and migrations; authentication and authorization; Cloudinary integration for product image uploads; and payment-related integration.",
-    technologies: ["Node.js", "TypeScript", "PostgreSQL", "Docker", "REST APIs", "Cloudinary"],
+      "Worked on the backend: REST API routes for products, cart, orders, and payments; SQLAlchemy models and Alembic migrations; JWT authentication with bcrypt password hashing; Cloudinary integration for product image uploads with validation and soft-delete cleanup; and the Paystack webhook handler for post-payment stock deduction.",
+    technologies: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Paystack",
+      "Cloudinary",
+      "Docker",
+    ],
     repo: "https://github.com/Cohort-IV-Web2-Advance/vintique",
     live: "https://vintique-one.vercel.app/",
   },
   {
     name: "Nex Innovations",
     description:
-      "A Next.js web application for Nex Innovations, a technology company. Includes a public-facing site with service pages, team information, and a contact flow backed by email delivery.",
+      "A full-stack web application for a branding and print studio. The public site covers services, portfolio, pricing, and a custom T-shirt ordering flow. An admin dashboard handles orders, enquiries, products, and portfolio items.",
     contribution:
-      "Worked on the Next.js application, API route integration, database and deployment configuration fixes, and email-related functionality using a third-party email service.",
-    technologies: ["Next.js", "TypeScript", "Node.js", "REST APIs"],
+      "Worked across the stack in a TypeScript monorepo. Contributed to the Express API and Prisma database layer, email delivery with Resend for OTP-based guest checkout and admin verification, Cloudinary image upload integration, and deployment configuration fixes for Render and Supabase.",
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+      "Resend",
+      "Cloudinary",
+      "Paystack",
+    ],
     repo: "https://github.com/DevSolex/NexInnovation",
     live: "https://nex-innovation.vercel.app/",
   },
   {
     name: "Build Planner",
     description:
-      "A business-planning tool with a guided multi-step questionnaire. Users answer structured questions about their business idea and receive a formatted plan preview based on their answers.",
+      "An AI-powered business plan generator. Users answer a guided questionnaire and receive a structured business plan covering executive summary, market analysis, competitive landscape, and SWOT. Plans can be edited and exported to PDF.",
     contribution:
-      "Implemented the guided questionnaire flow and the structured plan preview that assembles user answers into a readable output.",
-    technologies: ["TypeScript", "Next.js", "React"],
+      "Implemented the guided questionnaire flow and the plan preview, which assembles user answers into a structured output. The project is a TypeScript monorepo with a Next.js frontend and an Express backend that calls the Anthropic API to generate plan sections.",
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "Express.js",
+      "Anthropic API",
+    ],
     repo: "https://github.com/elcareem/build-planner",
     live: "https://build-planner-sandy.vercel.app/",
   },
