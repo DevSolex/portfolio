@@ -5,10 +5,17 @@ const skillGroups = [
   },
   {
     title: "Backend",
-    items: ["Node.js", "Express.js", "FastAPI", "REST APIs", "Authentication", "Authorization", "API integrations"],
+    items: [
+      "Node.js",
+      "Express.js",
+      "FastAPI",
+      "REST API design",
+      "Authentication and authorization",
+      "Third-party integrations",
+    ],
   },
   {
-    title: "Databases and data access",
+    title: "Databases",
     items: ["PostgreSQL", "MySQL", "MongoDB", "Prisma", "SQLAlchemy"],
   },
   {
@@ -17,7 +24,7 @@ const skillGroups = [
   },
   {
     title: "Tools and infrastructure",
-    items: ["Git", "GitHub", "Docker", "Linux", "CI/CD fundamentals", "Deployment tools"],
+    items: ["Git", "GitHub", "Docker", "Linux", "GitHub Actions"],
   },
 ];
 
