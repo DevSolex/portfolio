@@ -7,3 +7,13 @@
   --color-surface: #f5f5f5;
   --color-border: #e5e7eb;
 }
+
+/* Restore visible focus rings for keyboard navigation.
+   Tailwind v4's base reset removes browser defaults. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-foreground);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
