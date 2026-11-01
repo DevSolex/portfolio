@@ -2,20 +2,22 @@ const experiences = [
   {
     role: "Full-Stack Engineer Intern",
     company: "Blockfuse Labs",
-    period: "July 2026–Present",
+    period: "July 2026 – Present",
     points: [
-      "Working on full-stack features with a focus on practical integration between frontend and backend.",
+      "Contributing to application features across frontend and backend systems.",
+      "Working within a team on full-stack development tasks.",
     ],
   },
   {
     role: "Backend Engineer Intern",
     company: "TrueMinds Innovation",
-    period: "2025–2026",
+    period: "2025 – 2026",
     points: [
-      "Built and maintained backend APIs for internal systems.",
-      "Worked with database models, authentication, and application workflows.",
-      "Handled assignment workflows, submissions, grading, and feedback where needed.",
-      "Integrated backend services with frontend applications.",
+      "Built and maintained backend APIs for internal applications.",
+      "Worked on database modelling, authentication, and application workflows.",
+      "Set up and worked with Docker for local and deployment environments.",
+      "Debugged and resolved application issues across the stack.",
+      "Connected backend services to frontend applications.",
     ],
   },
 ];
@@ -39,12 +41,12 @@ export function Experience() {
                   <h3 className="text-xl font-semibold">{exp.role}</h3>
                   <p className="text-muted">{exp.company}</p>
                 </div>
-                <p className="text-sm text-muted">{exp.period}</p>
+                <p className="text-sm text-muted whitespace-nowrap">{exp.period}</p>
               </div>
               <ul className="mt-6 space-y-3 text-muted">
                 {exp.points.map((point) => (
                   <li key={point} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-muted/60" />
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted/60" />
                     <span>{point}</span>
                   </li>
                 ))}
