@@ -4,9 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
   { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -15,7 +16,10 @@ export function Navigation() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
+      <nav
+        aria-label="Primary"
+        className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4"
+      >
         <Link href="#hero" className="text-sm font-semibold tracking-tight">
           Samaila Solomon Monday
         </Link>
@@ -43,9 +47,10 @@ export function Navigation() {
           className="md:hidden rounded-md border border-border px-3 py-2 text-sm"
           aria-expanded={open}
           aria-controls="mobile-menu"
+          aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((prev) => !prev)}
         >
-          Menu
+          {open ? "Close" : "Menu"}
         </button>
       </nav>
       {open ? (

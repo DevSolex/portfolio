@@ -15,19 +15,7 @@ export function Projects() {
               key={project.name}
               className="flex h-full flex-col rounded-lg border border-border p-6 transition-colors hover:bg-surface sm:p-8"
             >
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-xl font-semibold">{project.name}</h3>
-                {project.live ? (
-                  <Link
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-muted transition-colors hover:text-foreground"
-                  >
-                    Live
-                  </Link>
-                ) : null}
-              </div>
+              <h3 className="text-xl font-semibold">{project.name}</h3>
               <p className="mt-3 text-muted">{project.description}</p>
               <p className="mt-4 text-sm text-foreground/90">
                 {project.contribution}
@@ -42,15 +30,27 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="mt-6">
+              <div className="mt-auto pt-6 flex items-center gap-4">
                 <Link
                   href={project.repo}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`View source code for ${project.name} on GitHub`}
                   className="text-sm text-muted transition-colors hover:text-foreground"
                 >
-                  Source
+                  GitHub
                 </Link>
+                {project.live ? (
+                  <Link
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View live demo of ${project.name}`}
+                    className="text-sm text-muted transition-colors hover:text-foreground"
+                  >
+                    Live
+                  </Link>
+                ) : null}
               </div>
             </article>
           ))}
