@@ -10,13 +10,17 @@ const skillGroups = [
       "Express.js",
       "FastAPI",
       "REST API design",
-      "Authentication and authorization",
-      "Third-party integrations",
+      "JWT and session auth",
+      "Webhook handling",
     ],
   },
   {
-    title: "Databases",
+    title: "Databases and ORMs",
     items: ["PostgreSQL", "MySQL", "MongoDB", "Prisma", "SQLAlchemy"],
+  },
+  {
+    title: "Integrations",
+    items: ["Paystack", "Cloudinary", "Resend", "WhatsApp Cloud API"],
   },
   {
     title: "Frontend",

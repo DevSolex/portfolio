@@ -8,15 +8,16 @@ export function About() {
             Focused on reliable backend work
           </h2>
           <p className="mt-6 text-lg text-muted">
-            I focus on backend development and API design, building database-backed
-            applications with attention to authentication, authorization, and
-            integrations. When needed, I handle frontend integration to connect
-            those systems to a working product.
+            Most of my time goes into backend work: designing schemas, building
+            REST APIs, handling authentication, and wiring payment and messaging
+            integrations. I care about understanding why a system is built a
+            certain way, not just making it run.
           </p>
           <p className="mt-4 text-muted">
-            My work involves designing schemas, building REST APIs, wiring payment
-            and third-party integrations, and keeping the pieces between services
-            consistent and testable.
+            I have built systems with Python, FastAPI, Node.js, and TypeScript,
+            using PostgreSQL as the primary database in most projects. I work with
+            the frontend side when a product needs it, and I try to keep the
+            boundary between services clear and the code straightforward to follow.
           </p>
         </div>
       </div>
